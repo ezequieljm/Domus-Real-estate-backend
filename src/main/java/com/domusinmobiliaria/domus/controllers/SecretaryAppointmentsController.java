@@ -3,8 +3,6 @@ package com.domusinmobiliaria.domus.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import javax.websocket.server.PathParam;
-
 import com.domusinmobiliaria.domus.model.Appointment;
 import com.domusinmobiliaria.domus.service.AppointmentService;
 
