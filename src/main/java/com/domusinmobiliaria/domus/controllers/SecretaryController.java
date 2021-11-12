@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,5 +47,11 @@ public class SecretaryController
     public ResponseEntity<Optional<Appointment>> anAppointment(@PathVariable(value = "id") Long id)
     {
         return ResponseEntity.ok(appointmentService.findById(id));
+    }
+
+    @PutMapping(value = "/schedule/appointments" + ID_ID)
+    public ResponseEntity<Appointment> changeAnAppointment(@RequestBody Appointment appointment, @PathVariable int id)
+    {
+        return ResponseEntity.ok(appointmentService.save(appointment));
     }
 }

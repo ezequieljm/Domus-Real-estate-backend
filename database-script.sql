@@ -5,7 +5,10 @@ CREATE TABLE appointments (
     date_appointment VARCHAR(20),
     hour VARCHAR(20),
     agent VARCHAR(50),
-    propertie VARCHAR(10),
+    propertie int,
+    client VARCHAR(50),
+    cellphone int,
+    email VARCHAR(100),
     state_appointment VARCHAR(10),
     PRIMARY KEY (id)
 );
@@ -17,7 +20,10 @@ INSERT INTO appointments (
     date_appointment, 
     hour, 
     agent, 
-    propertie, 
+    propertie,
+    client,
+    cellphone,
+    email,
     state_appointment
 )
 VALUE (
@@ -27,6 +33,9 @@ VALUE (
     "8:10:00 PM",
     "Ned Bigby",
     "98723",
+    "Jeffrey Winger",
+    23423423,
+    "jeffWinger@gmail.com",
     "En Proceso"
 );
 
@@ -38,6 +47,9 @@ INSERT INTO appointments (
     hour, 
     agent, 
     propertie, 
+    client,
+    cellphone,
+    email,
     state_appointment
 )
 VALUE (
@@ -47,6 +59,9 @@ VALUE (
     "10:10:00 AM",
     "Gordon Freeman",
     "8723",
+    "Anni Edison",
+    98793235,
+    "anniEdison@gmail.com",
     "Cancelada"
 );
 
@@ -57,6 +72,9 @@ INSERT INTO appointments (
     hour, 
     agent, 
     propertie, 
+    client,
+    cellphone,
+    email,
     state_appointment
 )
 VALUE (
@@ -66,6 +84,9 @@ VALUE (
     "12:10:00 AM",
     "Ned Bigby",
     "88993",
+    "Britta Perry",
+    87687632,
+    "brittaPerry@gmail.com",
     "En Proceso"
 );
 
@@ -77,6 +98,9 @@ INSERT INTO appointments (
     hour, 
     agent, 
     propertie, 
+    client,
+    cellphone,
+    email,
     state_appointment
 )
 VALUE (
@@ -86,5 +110,17 @@ VALUE (
     "12:10:00 AM",
     "Richard Feynman",
     "78236",
+    "Troy Barnes",
+    20152345,
+    "troyBarner@gmail.com",
     "Finalizada"
 );
+
+ALTER TABLE appointments
+ADD COLUMN client VARCHAR(50) NOT NULL AFTER propertie;
+
+ALTER TABLE appointments
+ADD COLUMN cellphone int AFTER client;
+
+ALTER TABLE appointments
+ADD COLUMN email VARCHAR(100) AFTER cellphone;

@@ -31,9 +31,45 @@ public class Appointment
     @Column(name = "state_appointment")
     private String stateAppointment;
 
+    private String client;
+
+    private int cellphone;
+
+    private String email;
+
     public Long getId()
     {
         return id;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public String getClient()
+    {
+        return client;
+    }
+
+    public void setClient(String client)
+    {
+        this.client = client;
+    }
+
+    public int getCellphone()
+    {
+        return cellphone;
+    }
+
+    public void setCellphone(int cellphone)
+    {
+        this.cellphone = cellphone;
     }
 
     public void setId(Long id)

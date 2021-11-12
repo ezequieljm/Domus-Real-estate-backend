@@ -27,6 +27,21 @@ public class AppointmentService implements AppointmentRepository
     }
 
     @Override
+    public Optional<Appointment> findById(Long id)
+    {
+        return appointmentRepository.findById(id);
+    }
+
+    @Override
+    public <T extends Appointment> T save(T entity)
+    {
+        return appointmentRepository.save(entity);
+    }
+
+    /**
+     * Methods not implemented
+     */
+    @Override
     public List<Appointment> findAll(Sort sort)
     {
         // TODO Auto-generated method stub
@@ -174,19 +189,6 @@ public class AppointmentService implements AppointmentRepository
     }
 
     @Override
-    public Optional<Appointment> findById(Long id)
-    {
-        return appointmentRepository.findById(id);
-    }
-
-    @Override
-    public <S extends Appointment> S save(S entity)
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
     public <S extends Appointment> long count(Example<S> example)
     {
         // TODO Auto-generated method stub
@@ -213,5 +215,4 @@ public class AppointmentService implements AppointmentRepository
         // TODO Auto-generated method stub
         return null;
     }
-
 }
