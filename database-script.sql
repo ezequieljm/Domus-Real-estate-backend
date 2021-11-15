@@ -94,3 +94,66 @@ ADD COLUMN cellphone int AFTER client;
 
 ALTER TABLE appointments
 ADD COLUMN email VARCHAR(100) AFTER cellphone;
+
+
+CREATE TABLE appointments (
+    id int NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    short_description VARCHAR(255),
+    date_appointment VARCHAR(20),
+    hour VARCHAR(20),
+    agent VARCHAR(50),
+    propertie int,
+    client VARCHAR(50),
+    cellphone int,
+    email VARCHAR(100),
+    state_appointment VARCHAR(10),
+    PRIMARY KEY (id)
+);
+
+
+INSERT INTO appointments (
+    title, 
+    short_description, 
+    date_appointment, 
+    hour, 
+    agent, 
+    propertie,
+    client,
+    cellphone,
+    email
+    state_appointment
+)
+VALUE (
+    "Ir a la casa de Big Smoke",
+    "Visitar la casa de Big Smoke en Grove Street. -Solo tenias que segir el tren CJ!-",
+    "11/9/2021",
+    "8:10:00 PM",
+    "Ned Bigby",
+    "98723",
+    "Alisson Page",
+    234345,
+    "alissonPage@gmail.com",
+    "En Proceso"
+);
+
+INSERT INTO appointments (
+    title, 
+    short_description, 
+    date_appointment, 
+    hour, 
+    agent, 
+    propertie,
+    id_client,
+    state_appointment
+)
+VALUE (
+    "Visitar la Colmena de Raccon City",
+    "Llevar a Alice a conocer la colmena",
+    "11/9/2021",
+    "9:10:00 PM",
+    "Ned Bigby",
+    "9823",
+    2,
+    "En Proceso"
+);
