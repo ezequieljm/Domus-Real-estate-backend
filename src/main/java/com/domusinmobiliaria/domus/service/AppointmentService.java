@@ -20,9 +20,6 @@ public class AppointmentService implements AppointmentRepository
     @Autowired
     private AppointmentRepository appointmentRepository;
 
-    @Autowired
-    private ClientService clientService;
-
     /**
      * READ ALL RECORDS
      */
@@ -47,7 +44,6 @@ public class AppointmentService implements AppointmentRepository
     @Override
     public <T extends Appointment> T save(T appointmentEdited)
     {
-        clientService.save(appointmentEdited.getClient());
         return appointmentRepository.save(appointmentEdited);
     }
 

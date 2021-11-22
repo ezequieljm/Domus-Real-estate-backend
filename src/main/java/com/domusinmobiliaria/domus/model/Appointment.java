@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity 
@@ -30,14 +28,14 @@ public class Appointment
 
     private String propertie;
 
-
     @Column(name = "state_appointment")
     private String stateAppointment;
 
-    @ManyToOne
-    @JoinColumn(name = "idClient")
-    private ClientModel client;
+    private int cellphone;
 
+    private String fullname;
+
+    private String email;
 
     /**
      * Methods
@@ -45,16 +43,6 @@ public class Appointment
     public Appointment()
     {
 
-    }
-
-    public ClientModel getClient()
-    {
-        return client;
-    }
-
-    public void setClient(ClientModel client)
-    {
-        this.client = client;
     }
 
     public Long getId()
@@ -135,6 +123,36 @@ public class Appointment
     public void setStateAppointment(String stateAppointment)
     {
         this.stateAppointment = stateAppointment;
+    }
+
+    public int getCellphone()
+    {
+        return cellphone;
+    }
+
+    public void setCellphone(int cellphone)
+    {
+        this.cellphone = cellphone;
+    }
+
+    public String getFullName()
+    {
+        return fullname;
+    }
+
+    public void setFullName(String fullName)
+    {
+        this.fullname = fullName;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
     }
 
 }

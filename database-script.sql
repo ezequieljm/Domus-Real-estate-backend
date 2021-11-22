@@ -157,3 +157,118 @@ VALUE (
     2,
     "En Proceso"
 );
+
+-- New Records
+
+INSERT INTO appointments (
+    title, 
+    short_description, 
+    date_appointment, 
+    hour, 
+    agent, 
+    propertie,
+    id_client,
+    state_appointment
+)
+VALUE (
+    "Casa de Alan Wake en Bright Fall",
+    "Visitar la casa de Alan Wake",
+    "12/10/2021",
+    "10:10:00 AM",
+    "Ned Bigby",
+    "98723",
+    8,
+    "En Proceso"
+);
+
+INSERT INTO appointments (
+    title, 
+    short_description, 
+    date_appointment, 
+    hour, 
+    agent, 
+    propertie,
+    id_client,
+    state_appointment
+)
+VALUE (
+    "Casa de Alan Wake en Bright Fall",
+    "Visitar la casa de Alan Wake",
+    "12/10/2021",
+    "10:10:00 AM",
+    "Ned Bigby",
+    "98723",
+    9,
+    "En Proceso"
+);
+
+
+-- CLIENTS
+
+INSERT INTO clients (
+    fullname,
+    cellphone,
+    email
+)
+VALUE (
+    "Alan Wake",
+    762309,
+    "alanWake@gmail.com"
+);
+
+INSERT INTO clients (
+    fullname,
+    cellphone,
+    email
+)
+VALUE (
+    "Tommy Vercetti",
+    12345657,
+    "tommyVercetti@gmail.com"
+);
+
+INSERT INTO clients (
+    fullname,
+    cellphone,
+    email
+)
+VALUE (
+    "Sarah Connor",
+    7658309,
+    "saraConnor@gmail.com"
+);
+
+INSERT INTO clients (
+    fullname,
+    cellphone,
+    email
+)
+VALUE (
+    "Ellen Ripley",
+    00345657,
+    "ellenRipley@gmail.com"
+);
+
+
+INSERT INTO clients (
+    fullname,
+    cellphone,
+    email
+)
+VALUE (
+    "Hermione Granger",
+    00345657,
+    "hermioneGranger@gmail.com"
+);
+
+
+INSERT INTO clients (
+    fullname,
+    cellphone,
+    email
+)
+VALUE (
+    "Alice",
+    0034565700,
+    "alice@gmail.com"
+);
