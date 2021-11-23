@@ -179,7 +179,7 @@ VALUE (
     "En Proceso"
 );
 
-INSERT INTO appointments (
+INSERT INTO apps (
     title, 
     short_description, 
     date_appointment, 
@@ -196,7 +196,7 @@ VALUE (
     "10:10:00 AM",
     "Ned Bigby",
     "98723",
-    9,
+    3,
     "En Proceso"
 );
 

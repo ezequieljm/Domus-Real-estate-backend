@@ -58,7 +58,10 @@ public class SecretaryController
         @PathVariable int id
     ) 
     { 
+        //Creating a new appointment
         AppointmentModel appointmentEdited = new AppointmentModel();
+
+        //Creating a new client
         ClientModel clientModelEdited = new ClientModel();
 
         ClientModel client = appointment.getClient();
