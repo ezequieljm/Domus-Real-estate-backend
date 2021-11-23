@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import com.domusinmobiliaria.domus.model.AppointmentModel;
+import com.domusinmobiliaria.domus.model.ClientModel;
 import com.domusinmobiliaria.domus.service.AppointmentService;
+import com.domusinmobiliaria.domus.service.ClientService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,7 @@ public class SecretaryController
 
     @Autowired
     private AppointmentService appointmentService;
+
 
     @GetMapping
     public String homeSecretary()
@@ -52,11 +55,18 @@ public class SecretaryController
 
     @PutMapping(value = "/schedule/appointments/modify" + ID_ID)
     public ResponseEntity<AppointmentModel> changeAnAppointment(
-        @RequestBody AppointmentModel appointment, 
+        @RequestBody AppointmentModel appointment,
         @PathVariable int id
     ) 
     { 
         AppointmentModel appointmentEdited = new AppointmentModel();
+        ClientModel clientModelEdited = new ClientModel();
+
+        ClientModel client = appointment.getClient();
+
+        clientModelEdited.setFullname(client.getFullname());
+        clientModelEdited.setCellphone(client.getCellphone());
+        clientModelEdited.setEmail(client.getEmail());
 
         appointmentEdited.setId(appointment.getId());
         appointmentEdited.setTitle(appointment.getTitle());
@@ -66,9 +76,7 @@ public class SecretaryController
         appointmentEdited.setAgent(appointment.getAgent());
         appointmentEdited.setPropertie(appointment.getPropertie());
         appointmentEdited.setStateAppointment(appointment.getStateAppointment());
-        appointmentEdited.setCellphone((int)appointment.getCellphone());
-        appointmentEdited.setFullName(appointment.getFullName());
-        appointmentEdited.setEmail(appointment.getEmail());
+        appointmentEdited.setClient(clientModelEdited);
 
         return ResponseEntity.ok(appointmentService.save(appointmentEdited));
     }

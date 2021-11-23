@@ -3,9 +3,8 @@ package com.domusinmobiliaria.domus.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.domusinmobiliaria.domus.model.AppointmentModel;
 import com.domusinmobiliaria.domus.model.ClientModel;
-import com.domusinmobiliaria.domus.repository.AppointmentRepository;
+import com.domusinmobiliaria.domus.repository.ClientRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -15,62 +14,48 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AppointmentService implements AppointmentRepository
+public class ClientService implements ClientRepository
 {
-
     @Autowired
-    private AppointmentRepository appointmentRepository;
+    private ClientRepository clientRepository;
 
-    @Autowired
-    private ClientService clientService;
-
-    /**
-     * READ ALL RECORDS
-     */
     @Override
-    public List<AppointmentModel> findAll()
+    public List<ClientModel> findAll()
     {
-        return appointmentRepository.findAll();
+        return clientRepository.findAll();
     }
 
-    /**
-     * READ BY IDENTIFIER
-     */
     @Override
-    public Optional<AppointmentModel> findById(Long id)
+    public Optional<ClientModel> findById(Long id)
     {
-        return appointmentRepository.findById(id);
+        return clientRepository.findById(id);
     }
 
-    /**
-     * UPDATE RECORD BY IDENTIFIER
-     */
     @Override
-    public <T extends AppointmentModel> T save(T appointmentEdited)
+    public <S extends ClientModel> S save(S client)
     {
-        clientService.save(appointmentEdited.getClient());
-        return appointmentRepository.save(appointmentEdited);
+        return clientRepository.save(client);
     }
 
-    /**
-     * Methods not implemented
-     */
+
+    //No Implements
+
     @Override
-    public List<AppointmentModel> findAll(Sort sort)
+    public List<ClientModel> findAll(Sort sort)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<AppointmentModel> findAllById(Iterable<Long> ids)
+    public List<ClientModel> findAllById(Iterable<Long> ids)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends AppointmentModel> List<S> saveAll(Iterable<S> entities)
+    public <S extends ClientModel> List<S> saveAll(Iterable<S> entities)
     {
         // TODO Auto-generated method stub
         return null;
@@ -80,77 +65,86 @@ public class AppointmentService implements AppointmentRepository
     public void flush()
     {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override
-    public <S extends AppointmentModel> S saveAndFlush(S entity)
+    public <S extends ClientModel> S saveAndFlush(S entity)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends AppointmentModel> List<S> saveAllAndFlush(Iterable<S> entities)
+    public <S extends ClientModel> List<S> saveAllAndFlush(Iterable<S> entities)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void deleteAllInBatch(Iterable<AppointmentModel> entities)
+    public void deleteAllInBatch(Iterable<ClientModel> entities)
     {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override
     public void deleteAllByIdInBatch(Iterable<Long> ids)
     {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override
     public void deleteAllInBatch()
     {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override
-    public AppointmentModel getOne(Long id)
+    public ClientModel getOne(Long id)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public AppointmentModel getById(Long id)
+    public ClientModel getById(Long id)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends AppointmentModel> List<S> findAll(Example<S> example)
+    public <S extends ClientModel> List<S> findAll(Example<S> example)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends AppointmentModel> List<S> findAll(Example<S> example, Sort sort)
+    public <S extends ClientModel> List<S> findAll(Example<S> example, Sort sort)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Page<AppointmentModel> findAll(Pageable pageable)
+    public Page<ClientModel> findAll(Pageable pageable)
     {
         // TODO Auto-generated method stub
         return null;
+    }
+
+
+
+    @Override
+    public boolean existsById(Long id)
+    {
+        // TODO Auto-generated method stub
+        return false;
     }
 
     @Override
@@ -161,72 +155,66 @@ public class AppointmentService implements AppointmentRepository
     }
 
     @Override
-    public void delete(AppointmentModel entity)
+    public void deleteById(Long id)
     {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override
-    public void deleteAll()
+    public void delete(ClientModel entity)
     {
         // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void deleteAll(Iterable<? extends AppointmentModel> entities)
-    {
-        // TODO Auto-generated method stub
-
+        
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Long> ids)
     {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override
-    public void deleteById(Long id)
+    public void deleteAll(Iterable<? extends ClientModel> entities)
     {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override
-    public boolean existsById(Long id)
+    public void deleteAll()
     {
         // TODO Auto-generated method stub
-        return false;
+        
     }
 
     @Override
-    public <S extends AppointmentModel> long count(Example<S> example)
+    public <S extends ClientModel> Optional<S> findOne(Example<S> example)
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public <S extends ClientModel> Page<S> findAll(Example<S> example, Pageable pageable)
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public <S extends ClientModel> long count(Example<S> example)
     {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public <S extends AppointmentModel> boolean exists(Example<S> example)
+    public <S extends ClientModel> boolean exists(Example<S> example)
     {
         // TODO Auto-generated method stub
         return false;
     }
 
-    @Override
-    public <S extends AppointmentModel> Page<S> findAll(Example<S> example, Pageable pageable)
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public <S extends AppointmentModel> Optional<S> findOne(Example<S> example)
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
 }

@@ -1,4 +1,4 @@
-CREATE TABLE appointments (
+CREATE TABLE apps (
     id int NOT NULL AUTO_INCREMENT,
     title VARCHAR(255),
     short_description VARCHAR(255),
@@ -20,7 +20,7 @@ CREATE TABLE clients (
     PRIMARY KEY (id_client)
 );
 
-INSERT INTO appointments (
+INSERT INTO apps (
     title, 
     short_description, 
     date_appointment, 
@@ -41,7 +41,7 @@ VALUE (
     "En Proceso"
 );
 
-INSERT INTO appointments (
+INSERT INTO apps (
     title, 
     short_description, 
     date_appointment, 
@@ -79,12 +79,10 @@ INSERT INTO clients (
     email
 )
 VALUE (
-    "Alisson Page",
-    92834,
-    "alissonPage@gmail.com"
+    "Melody Banner",
+    1292834,
+    "melodyBanner@gmail.com"
 );
-
-
 
 ALTER TABLE appointments
 ADD COLUMN client VARCHAR(50) NOT NULL AFTER propertie;
