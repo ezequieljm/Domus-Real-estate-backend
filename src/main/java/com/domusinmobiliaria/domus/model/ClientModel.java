@@ -12,7 +12,8 @@ import javax.persistence.Table;
 public class ClientModel {
 
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_client")
     private Long idClient;
 
