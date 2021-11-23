@@ -3,7 +3,7 @@ package com.domusinmobiliaria.domus.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import com.domusinmobiliaria.domus.model.Appointment;
+import com.domusinmobiliaria.domus.model.AppointmentModel;
 import com.domusinmobiliaria.domus.service.AppointmentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,25 +39,42 @@ public class SecretaryController
     }
 
     @GetMapping(value = "/schedule/appointments")
-    public ResponseEntity<List<Appointment>> appointmentsResourse()
+    public ResponseEntity<List<AppointmentModel>> appointmentsResourse()
     {
         return ResponseEntity.ok(appointmentService.findAll());
     }
 
     @GetMapping(value = "/schedule/appointments/" + ID_ID)
-    public ResponseEntity<Optional<Appointment>> anAppointment(@PathVariable(value = "id") Long id)
+    public ResponseEntity<Optional<AppointmentModel>> anAppointment(@PathVariable(value = "id") Long id)
     {
         return ResponseEntity.ok(appointmentService.findById(id));
     }
 
     @PutMapping(value = "/schedule/appointments/modify" + ID_ID)
-    public ResponseEntity<Appointment> changeAnAppointment(@RequestBody Appointment appointment, @PathVariable int id) 
+    public ResponseEntity<AppointmentModel> changeAnAppointment(
+        @RequestBody AppointmentModel appointment, 
+        @PathVariable int id
+    ) 
     { 
-        return ResponseEntity.ok(appointmentService.save(appointment));
+        AppointmentModel appointmentEdited = new AppointmentModel();
+
+        appointmentEdited.setId(appointment.getId());
+        appointmentEdited.setTitle(appointment.getTitle());
+        appointmentEdited.setShortDescription(appointment.getShortDescription());
+        appointmentEdited.setDateAppointment(appointment.getDateAppointment());
+        appointmentEdited.setHour(appointment.getHour());
+        appointmentEdited.setAgent(appointment.getAgent());
+        appointmentEdited.setPropertie(appointment.getPropertie());
+        appointmentEdited.setStateAppointment(appointment.getStateAppointment());
+        appointmentEdited.setCellphone((int)appointment.getCellphone());
+        appointmentEdited.setFullName(appointment.getFullName());
+        appointmentEdited.setEmail(appointment.getEmail());
+
+        return ResponseEntity.ok(appointmentService.save(appointmentEdited));
     }
 
     @PostMapping(value = "/schedule/appointments/create")
-    public ResponseEntity<Appointment> saveAnAppointment(@RequestBody Appointment appointment)
+    public ResponseEntity<AppointmentModel> saveAnAppointment(@RequestBody AppointmentModel appointment)
     {
         return ResponseEntity.ok(appointmentService.save(appointment));
     }

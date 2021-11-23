@@ -3,7 +3,7 @@ package com.domusinmobiliaria.domus.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.domusinmobiliaria.domus.model.Appointment;
+import com.domusinmobiliaria.domus.model.AppointmentModel;
 import com.domusinmobiliaria.domus.repository.AppointmentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class AppointmentService implements AppointmentRepository
      * READ ALL RECORDS
      */
     @Override
-    public List<Appointment> findAll()
+    public List<AppointmentModel> findAll()
     {
         return appointmentRepository.findAll();
     }
@@ -33,7 +33,7 @@ public class AppointmentService implements AppointmentRepository
      * READ BY IDENTIFIER
      */
     @Override
-    public Optional<Appointment> findById(Long id)
+    public Optional<AppointmentModel> findById(Long id)
     {
         return appointmentRepository.findById(id);
     }
@@ -42,7 +42,7 @@ public class AppointmentService implements AppointmentRepository
      * UPDATE RECORD BY IDENTIFIER
      */
     @Override
-    public <T extends Appointment> T save(T appointmentEdited)
+    public <T extends AppointmentModel> T save(T appointmentEdited)
     {
         return appointmentRepository.save(appointmentEdited);
     }
@@ -51,21 +51,21 @@ public class AppointmentService implements AppointmentRepository
      * Methods not implemented
      */
     @Override
-    public List<Appointment> findAll(Sort sort)
+    public List<AppointmentModel> findAll(Sort sort)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<Appointment> findAllById(Iterable<Long> ids)
+    public List<AppointmentModel> findAllById(Iterable<Long> ids)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Appointment> List<S> saveAll(Iterable<S> entities)
+    public <S extends AppointmentModel> List<S> saveAll(Iterable<S> entities)
     {
         // TODO Auto-generated method stub
         return null;
@@ -79,21 +79,21 @@ public class AppointmentService implements AppointmentRepository
     }
 
     @Override
-    public <S extends Appointment> S saveAndFlush(S entity)
+    public <S extends AppointmentModel> S saveAndFlush(S entity)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Appointment> List<S> saveAllAndFlush(Iterable<S> entities)
+    public <S extends AppointmentModel> List<S> saveAllAndFlush(Iterable<S> entities)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void deleteAllInBatch(Iterable<Appointment> entities)
+    public void deleteAllInBatch(Iterable<AppointmentModel> entities)
     {
         // TODO Auto-generated method stub
 
@@ -114,35 +114,35 @@ public class AppointmentService implements AppointmentRepository
     }
 
     @Override
-    public Appointment getOne(Long id)
+    public AppointmentModel getOne(Long id)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Appointment getById(Long id)
+    public AppointmentModel getById(Long id)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Appointment> List<S> findAll(Example<S> example)
+    public <S extends AppointmentModel> List<S> findAll(Example<S> example)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Appointment> List<S> findAll(Example<S> example, Sort sort)
+    public <S extends AppointmentModel> List<S> findAll(Example<S> example, Sort sort)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Page<Appointment> findAll(Pageable pageable)
+    public Page<AppointmentModel> findAll(Pageable pageable)
     {
         // TODO Auto-generated method stub
         return null;
@@ -156,7 +156,7 @@ public class AppointmentService implements AppointmentRepository
     }
 
     @Override
-    public void delete(Appointment entity)
+    public void delete(AppointmentModel entity)
     {
         // TODO Auto-generated method stub
 
@@ -170,7 +170,7 @@ public class AppointmentService implements AppointmentRepository
     }
 
     @Override
-    public void deleteAll(Iterable<? extends Appointment> entities)
+    public void deleteAll(Iterable<? extends AppointmentModel> entities)
     {
         // TODO Auto-generated method stub
 
@@ -198,28 +198,28 @@ public class AppointmentService implements AppointmentRepository
     }
 
     @Override
-    public <S extends Appointment> long count(Example<S> example)
+    public <S extends AppointmentModel> long count(Example<S> example)
     {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public <S extends Appointment> boolean exists(Example<S> example)
+    public <S extends AppointmentModel> boolean exists(Example<S> example)
     {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public <S extends Appointment> Page<S> findAll(Example<S> example, Pageable pageable)
+    public <S extends AppointmentModel> Page<S> findAll(Example<S> example, Pageable pageable)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Appointment> Optional<S> findOne(Example<S> example)
+    public <S extends AppointmentModel> Optional<S> findOne(Example<S> example)
     {
         // TODO Auto-generated method stub
         return null;

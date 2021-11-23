@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity 
 @Table(name = "appointments")
-public class Appointment
+public class AppointmentModel
 {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -40,7 +40,7 @@ public class Appointment
     /**
      * Methods
      * */
-    public Appointment()
+    public AppointmentModel()
     {
 
     }
