@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.domusinmobiliaria.domus.model.AppointmentModel;
-import com.domusinmobiliaria.domus.model.ClientModel;
 import com.domusinmobiliaria.domus.repository.AppointmentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

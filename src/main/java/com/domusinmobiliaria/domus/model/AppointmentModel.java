@@ -34,7 +34,7 @@ public class AppointmentModel
     private String stateAppointment;
 
     @ManyToOne
-    @JoinColumn(name = "id_client")
+    @JoinColumn(name = "idClient")
     private ClientModel client;
 
     public AppointmentModel() { }
