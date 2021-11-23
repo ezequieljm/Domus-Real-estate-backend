@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.domusinmobiliaria.domus.model.AppointmentModel;
+import com.domusinmobiliaria.domus.model.ClientModel;
 import com.domusinmobiliaria.domus.service.AppointmentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,14 +59,14 @@ public class SecretaryController
     ) 
     { 
         AppointmentModel appointmentEdited = new AppointmentModel();
-/*         ClientModel clientModelEdited = new ClientModel();
+        ClientModel clientModelEdited = new ClientModel();
 
         ClientModel client = appointment.getClient();
 
         clientModelEdited.setIdClient(client.getIdClient());
         clientModelEdited.setFullname(client.getFullname());
         clientModelEdited.setCellphone(client.getCellphone());
-        clientModelEdited.setEmail(client.getEmail()); */
+        clientModelEdited.setEmail(client.getEmail());
 
         appointmentEdited.setId(appointment.getId());
         appointmentEdited.setTitle(appointment.getTitle());
@@ -73,9 +74,9 @@ public class SecretaryController
         appointmentEdited.setDateAppointment(appointment.getDateAppointment());
         appointmentEdited.setHour(appointment.getHour());
         appointmentEdited.setAgent(appointment.getAgent());
-        appointmentEdited.setPropertie(appointment.getPropertie());
+        appointmentEdited.setPropertie((int)appointment.getPropertie());
         appointmentEdited.setStateAppointment(appointment.getStateAppointment());
-        appointmentEdited.setClient(appointment.getClient());
+        appointmentEdited.setClient(clientModelEdited);
 
         return ResponseEntity.ok(appointmentService.save(appointmentEdited));
     }

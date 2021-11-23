@@ -25,6 +25,14 @@ public class ClientModel {
 
     public ClientModel() { }
 
+    public ClientModel(Long id, String fullname, String email, int cellphone) 
+    { 
+        this.idClient = id;
+        this.fullname = fullname;
+        this.cellphone = cellphone;
+        this.email = email;
+    }
+
     public Long getIdClient()
     {
         return idClient;

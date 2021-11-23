@@ -28,7 +28,7 @@ public class AppointmentModel
 
     private String agent;
 
-    private String propertie;
+    private int propertie;
 
     @Column(name = "state_appointment")
     private String stateAppointment;
@@ -38,6 +38,19 @@ public class AppointmentModel
     private ClientModel client;
 
     public AppointmentModel() { }
+
+    public AppointmentModel(Long id, String title, String desc, String dateAp, String hour, String agent, int prop, String state, ClientModel client) 
+    { 
+        this.id = id;
+        this.title = title;
+        this.shortDescription = desc;
+        this.dateAppointment = dateAp;
+        this.hour = hour;
+        this.agent = agent;
+        this.propertie = prop;
+        this.stateAppointment = state;
+        this.client = client;
+    }
 
     public Long getId()
     {
@@ -99,12 +112,12 @@ public class AppointmentModel
         this.agent = agent;
     }
 
-    public String getPropertie()
+    public int getPropertie()
     {
         return propertie;
     }
 
-    public void setPropertie(String propertie)
+    public void setPropertie(int propertie)
     {
         this.propertie = propertie;
     }
